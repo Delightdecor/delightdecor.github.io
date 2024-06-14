@@ -17,19 +17,34 @@ body{
 } */
 .error {
   color: red;
-  font-size: 20px;
+  font-size: 1vw;
 }
 .containerAbout{
+
   width:80%;
   margin:auto;
-  overflow:hidden;
+  /* overflow:hidden; */
 }
 .container{
-  width:80%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
   margin:auto;
   overflow:hidden;
+  position: sticky;
+  height: 130px;
+}
+nav{
+  margin-left: auto;
+}
+#navbar{
   position: relative;
-  /* height: 60px; */
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .contain{
   width:80%;
@@ -43,6 +58,7 @@ body{
   position: absolute;
   height: 100%;
   width: 40%;
+  font-size: 1vw;
 }
 ul{
   margin:0;
@@ -81,10 +97,45 @@ header a{
   color:#000bbb;
   font-weight: bold;
   text-decoration:none;
-  text-transform: uppercase;
-  font-size:16px;
+  text-transform: lowercase;
+  font-size: 1.5vw;
 }
+.menu-icon {
+  display: none;
+  font-size: 4vw;
+      color: rgb(0, 0, 0);
+      cursor: pointer;
+}
+.navbar-menu{
+  margin-left: auto;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  nav {
+      display: none;
+      flex-direction: row;
+      
+      /* width: 60%; */
+    }
+    .navbar-menu{
+    align-items: baseline;
+    display: flex;
 
+  }
+  .navbar-menu.activemenu nav {
+      display: flex;
+  }
+  .menu-icon {
+      display: block;
+      
+  }
+  .highlight{
+    font-size: 3vw;
+  }
+}
 header #branding{
   float:left;
   display: flex;
@@ -111,7 +162,7 @@ header #branding h1{
 
 header nav{
   float:right;
-  margin-top:30px;
+  margin-top:-20px;
 }
 
 header .highlight, header .current{
@@ -142,12 +193,12 @@ header a:hover{
 #one h1{
   margin-top:100px;
   text-align:center;
-  font-size:60px;
+  font-size: 4.3vw;
   margin-bottom:10px;
 }
 
 #one p{
-  font-size:30px;
+  font-size: 1.7vw;
   text-align:center;
 }
   
@@ -167,7 +218,8 @@ header a:hover{
   padding:15px;
   text-align:centre;
   color:black;
-  background:lightgreen;
+  font-weight: bold;
+  background:rgb(112, 235, 129);
 }
 
 #delight h1{
@@ -217,7 +269,7 @@ header a:hover{
 /* Sidebar */
 aside#sidebar{
  font-weight: bold;
- font-size: 20px;
+ font-size: 1.5vw;
   border:black solid 2px;
   width:60%;
   margin-left:10px;
@@ -231,11 +283,14 @@ aside#sidebar .quote input, aside#sidebar .quote textarea{
   width:50%;
   padding:6px;
 }
+#delight button, .quote button{
+  width:50%;
+}
 
 /* Services */
 ul#services li{
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 1.5vw;
   padding:30px;
   border: black solid 1px;
   margin-bottom:15px;
@@ -280,9 +335,15 @@ footer{
   background-color:yellow;
   text-align: center;
 }
+ul#services li div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
 /* Media Queries */
-@media(max-width: 800px){
+@media screen and (max-width: 768px){
   header #branding,
   header nav,
   header nav li,
@@ -292,10 +353,14 @@ footer{
   article#main-col,
   aside#sidebar{
     float:none;
-    text-align:center;
-    width:100%;
+    /* text-align:center;
+    width:100%; */
   }
-
+.navbar{
+  margin-left: 30vw;
+  display: flex;
+  flex-grow: 1;
+}
   header{
     padding-bottom:20px;
   }
@@ -305,8 +370,7 @@ footer{
   }
 
   #delight button, .quote button{
-    display:block;
-    width:100%;
+    width:50%;
   }
 
   #delight form input[type="email"], .quote input, .quote textarea{
@@ -321,16 +385,16 @@ footer{
     height: 100%;
   }
   #delight{
-    padding:15px;
+    padding: 25px;
     text-align:centre;
     color:black;
-    background:lightgreen;
-    height: 140px;
+    height: 35px;
   }
   ul#services li div {
-    position: relative;
-    border-radius: 190px;
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
   #boxes{
     display: inline-block;
